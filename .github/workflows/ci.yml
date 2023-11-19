@@ -14,7 +14,7 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-        - name: Check out code into the Go module directory
+        - name: Check out code
           uses: actions/checkout@v2
 
         - name: 'Install Dependencies'
@@ -33,6 +33,9 @@ jobs:
             run:
                 shell: bash
         runs-on: ubuntu-latest
-        steps:   
+        steps:
+        - name: Check out code
+          uses: actions/checkout@v2  
+
         - name: 'Run Tests'
           run: npm run test
